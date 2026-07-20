@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #E50914; 
+    --background-color: #141414;
+    --text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    z-index: 100;
+    transition: background-color 0.4s;
+}
+
+.header.scrolled {
+    background-color: var(--background-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b3b3b3;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 1.6rem;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(to top, rgba(20, 20, 20, 1) 10%, rgba(20, 20, 20, 0) 50%), url('images (28).jpeg');
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.hero-buttons .btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-play {
+    background-color: var(--text-color);
+    color: #000;
+}
+
+.btn-play:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-info {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: var(--text-color);
+}
+
+.btn-info:hover {
+    background-color: rgba(109, 109, 110, 0.4);
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+
+.movie-row {
+    padding: 20px 50px;
+}
+
+.movie-row h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.movie-posters {
+    display: flex;
+    gap: 15px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding: 20px 0;
+    cursor: grab;
+}
+p{
+     text-decoration: none;
+    color: #ffffff;
+}
+
+.movie-posters.active {
+    cursor: grabbing;
+}
+
+
+.movie-posters::-webkit-scrollbar {
+    height: 8px;
+}
+.movie-posters::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+
+.movie-posters .poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-posters img {
+    width: 180px;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-posters img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.movie-posters p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+    color: #808080;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        display: none; 
+    }
+
+    .hero {
+        padding: 0 20px;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .movie-row {
+        padding: 20px;
+    }
+
+    .movie-posters img {
+        width: 140px;
+    }
+}
